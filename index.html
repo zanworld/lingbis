@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Lingbis - Homepage</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+    
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo">BizTech<span class="gradient-text">Insight</span></div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#articles">Artikel</a></li>
+                <li><a href="#assessment">Tentang</a></li>
+                <li><a href="https://www.amikom.ac.id" target="_blank" class="amikom-link">Kampus Amikom</a></li>
+                <li><button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <!-- Floating shapes for modern aesthetic -->
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        
+        <div class="container hero-content reveal">
+            <div class="hero-text">
+                <div class="badge">🚀 Masa Depan Bisnis</div>
+                <h1>Membangun Bisnis di Era <span class="gradient-text type-text"></span></h1>
+                <p>Jelajahi wawasan terbaru mengenai tren teknologi, lingkungan bisnis, dan strategi inovasi untuk masa depan.</p>
+                <div class="hero-buttons">
+                    <a href="#assessment" class="btn btn-primary btn-glow">Lihat Penilaian</a>
+                    <a href="#articles" class="btn btn-secondary">Baca Artikel <i class="fas fa-arrow-down"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/images/hero.png" alt="Business Growth">
+            </div>
+        </div>
+    </header>
+
+    <section id="assessment" class="assessment-section">
+        <div class="container reveal">
+            <div class="assessment-card glass-panel">
+                <div class="card-header">
+                    <h2><i class="fas fa-id-card-clip gradient-text"></i> Kriteria Penilaian Ujian</h2>
+                    <p>Homepage interaktif ini diajukan untuk memenuhi tugas akhir Lingkungan Bisnis.</p>
+                </div>
+                <div class="card-grid">
+                    <div class="info-item hover-scale">
+                        <div class="icon"><i class="fas fa-user-astronaut"></i></div>
+                        <div class="details">
+                            <span class="label">Nama Mahasiswa</span>
+                            <span class="value" id="studentName">[Nama Anda]</span>
+                        </div>
+                    </div>
+                    <div class="info-item hover-scale">
+                        <div class="icon"><i class="fas fa-fingerprint"></i></div>
+                        <div class="details">
+                            <span class="label">Nomor Mahasiswa (NIM)</span>
+                            <span class="value" id="studentId">[Nomor Mahasiswa]</span>
+                        </div>
+                    </div>
+                    <div class="info-item hover-scale">
+                        <div class="icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="details">
+                            <span class="label">Pendapatan</span>
+                            <span class="value success-text">Rp 15.000.000 / Bulan</span>
+                        </div>
+                    </div>
+                    <div class="info-item hover-scale">
+                        <div class="icon"><i class="fas fa-globe"></i></div>
+                        <div class="details">
+                            <span class="label">Alamat Blog / Channel Youtube</span>
+                            <span class="value"><a href="https://www.youtube.com/@ChannelAnda" target="_blank" class="hover-underline">youtube.com/@ChannelAnda</a></span>
+                        </div>
+                    </div>
+                    <div class="info-item hover-scale">
+                        <div class="icon"><i class="fas fa-users-viewfinder"></i></div>
+                        <div class="details">
+                            <span class="label">Visitors / Subscribers</span>
+                            <span class="value counter gradient-text" data-target="85400">0</span>
+                        </div>
+                    </div>
+                    <div class="info-item hover-scale">
+                        <div class="icon"><i class="fas fa-building-columns"></i></div>
+                        <div class="details">
+                            <span class="label">Institusi</span>
+                            <span class="value"><a href="https://www.amikom.ac.id" target="_blank" class="hover-underline">Universitas Amikom Yogyakarta</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="articles" class="articles-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Artikel <span class="gradient-text">Terbaru</span></h2>
+                <p>Wawasan yang akan mengubah cara Anda berbisnis.</p>
+            </div>
+            
+            <div class="articles-grid">
+                <!-- Article 1 -->
+                <article class="article-card glass-panel reveal reveal-delay-1">
+                    <div class="card-img-wrapper">
+                        <img src="assets/images/article_1.png" alt="Strategi Digital">
+                        <div class="category-badge">Blog</div>
+                    </div>
+                    <div class="article-content">
+                        <h3>Optimalisasi Pertumbuhan Bisnis Lewat Data Analytics</h3>
+                        <p>Bagaimana perusahaan modern menggunakan big data untuk memprediksi tren pasar dan mengambil keputusan strategis yang tepat.</p>
+                        <a href="artikel-1.html" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <!-- Article 2 -->
+                <article class="article-card glass-panel reveal reveal-delay-2">
+                    <div class="card-img-wrapper">
+                        <img src="assets/images/article_2.png" alt="Remote Work">
+                        <div class="category-badge">Blog</div>
+                    </div>
+                    <div class="article-content">
+                        <h3>Membangun Budaya Kerja Modern yang Efektif</h3>
+                        <p>Tantangan dan peluang dalam mengelola tim dinamis tanpa mengorbankan produktivitas dan kualitas kerja karyawan.</p>
+                        <a href="artikel-2.html" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <!-- Article 3 -->
+                <article class="article-card glass-panel reveal reveal-delay-3">
+                    <div class="video-thumbnail">
+                        <img src="assets/images/hero.png" alt="Video Podcast">
+                        <div class="play-button ripple"><i class="fas fa-play"></i></div>
+                        <div class="category-badge video-badge"><i class="fab fa-youtube"></i> Video</div>
+                    </div>
+                    <div class="article-content">
+                        <h3>[VIDEO] Diskusi: Lingkungan Bisnis Pasca Pandemi</h3>
+                        <p>Sesi diskusi eksklusif membahas bagaimana lanskap bisnis telah berubah secara permanen dan cara beradaptasi.</p>
+                        <a href="video-1.html" class="read-more">Tonton Sekarang <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container reveal">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>BizTech<span class="gradient-text">Insight</span></h3>
+                    <p>Memberikan wawasan mendalam tentang dunia bisnis, teknologi, dan strategi manajemen modern.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Tautan Penting</h4>
+                    <ul>
+                        <li><a href="https://www.amikom.ac.id" target="_blank">Universitas Amikom</a></li>
+                        <li><a href="#assessment">Tentang Penulis</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BizTech Insight. Dibuat dengan <i class="fas fa-heart" style="color: #ef4444;"></i> untuk pemenuhan tugas perkuliahan Lingkungan Bisnis.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts for Interactivity -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
