@@ -1,321 +1,184 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bisnis Digital 101 — Blog Peluang Bisnis Era Digital</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --ink:#1a1714;
-    --paper:#f4efe6;
-    --paper-2:#ece4d6;
-    --accent:#b3402a;
-    --accent-2:#1f4e79;
-    --gold:#a8801f;
-    --muted:#6b6258;
-    --line:#d8cdb8;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Newsreader',Georgia,serif;
-    font-size:19px;
-    line-height:1.75;
-    -webkit-font-smoothing:antialiased;
-    background-image:
-      radial-gradient(circle at 15% 10%, rgba(168,128,31,.05), transparent 40%),
-      radial-gradient(circle at 85% 80%, rgba(31,78,121,.05), transparent 45%);
-  }
-  .wrap{max-width:760px;margin:0 auto;padding:0 28px}
-
-  /* ---- Masthead ---- */
-  header.masthead{
-    border-bottom:3px double var(--ink);
-    padding:42px 0 22px;
-    margin-bottom:8px;
-    text-align:center;
-  }
-  .kicker{
-    font-family:'Spline Sans Mono',monospace;
-    font-size:12px;letter-spacing:.32em;text-transform:uppercase;
-    color:var(--accent);margin-bottom:14px;
-  }
-  .masthead h1{
-    font-family:'Fraunces',serif;
-    font-weight:900;
-    font-size:clamp(40px,9vw,76px);
-    line-height:.94;
-    letter-spacing:-.02em;
-  }
-  .masthead h1 em{font-style:italic;color:var(--accent)}
-  .tagline{
-    font-style:italic;color:var(--muted);
-    margin-top:16px;font-size:18px;
-  }
-  .meta-bar{
-    display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;
-    margin-top:22px;padding-top:16px;border-top:1px solid var(--line);
-    font-family:'Spline Sans Mono',monospace;font-size:12px;
-    letter-spacing:.08em;color:var(--muted);text-transform:uppercase;
-  }
-  .meta-bar b{color:var(--ink);font-weight:500}
-
-  /* ---- Nav ---- */
-  nav.toc{
-    position:sticky;top:0;z-index:20;
-    background:rgba(244,239,230,.92);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--line);
-    padding:12px 0;margin-bottom:48px;
-  }
-  nav.toc .wrap{display:flex;flex-wrap:wrap;gap:6px 26px;justify-content:center}
-  nav.toc a{
-    font-family:'Spline Sans Mono',monospace;font-size:12px;
-    letter-spacing:.06em;text-transform:uppercase;color:var(--muted);
-    text-decoration:none;padding:4px 0;border-bottom:2px solid transparent;
-    transition:.25s;
-  }
-  nav.toc a:hover{color:var(--accent);border-color:var(--accent)}
-
-  /* ---- Article ---- */
-  article{margin-bottom:80px;animation:rise .8s ease both}
-  article:nth-of-type(2){animation-delay:.05s}
-  article:nth-of-type(3){animation-delay:.1s}
-  @keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-
-  .art-num{
-    font-family:'Spline Sans Mono',monospace;font-size:13px;
-    color:var(--gold);letter-spacing:.2em;margin-bottom:10px;
-  }
-  article h2{
-    font-family:'Fraunces',serif;font-weight:600;
-    font-size:clamp(30px,5.5vw,46px);line-height:1.08;
-    letter-spacing:-.015em;margin-bottom:16px;
-  }
-  .byline{
-    font-family:'Spline Sans Mono',monospace;font-size:12px;
-    color:var(--muted);letter-spacing:.06em;margin-bottom:28px;
-    padding-bottom:20px;border-bottom:1px solid var(--line);
-  }
-  article p{margin-bottom:20px}
-  article p:first-of-type::first-letter{
-    font-family:'Fraunces',serif;font-weight:900;
-    float:left;font-size:74px;line-height:.78;
-    padding:6px 12px 0 0;color:var(--accent);
-  }
-  article h3{
-    font-family:'Fraunces',serif;font-weight:600;font-size:24px;
-    margin:36px 0 12px;letter-spacing:-.01em;
-  }
-  blockquote{
-    border-left:3px solid var(--accent);
-    margin:30px 0;padding:6px 0 6px 24px;
-    font-style:italic;font-size:22px;color:var(--accent-2);
-    font-family:'Fraunces',serif;
-  }
-  ul.clean{list-style:none;margin:0 0 22px}
-  ul.clean li{
-    position:relative;padding-left:30px;margin-bottom:12px;
-  }
-  ul.clean li::before{
-    content:"";position:absolute;left:0;top:13px;
-    width:9px;height:9px;background:var(--gold);
-    transform:rotate(45deg);
-  }
-  ul.clean li b{font-weight:600;color:var(--ink)}
-
-  .pull{
-    background:var(--paper-2);border:1px solid var(--line);
-    padding:22px 26px;margin:30px 0;border-radius:2px;
-    font-size:17px;
-  }
-  .pull .lbl{
-    font-family:'Spline Sans Mono',monospace;font-size:11px;
-    letter-spacing:.2em;text-transform:uppercase;color:var(--accent);
-    display:block;margin-bottom:8px;
-  }
-
-  .divider{
-    text-align:center;color:var(--gold);font-size:22px;
-    margin:0 0 60px;letter-spacing:.6em;
-  }
-
-  a.inline{color:var(--accent-2);text-decoration:none;border-bottom:1px solid var(--accent-2)}
-  a.inline:hover{background:var(--accent-2);color:var(--paper)}
-
-  /* ---- Author / footer ---- */
-  .authorcard{
-    background:var(--ink);color:var(--paper);
-    padding:36px 30px;border-radius:3px;margin-bottom:36px;
-  }
-  .authorcard .lbl{
-    font-family:'Spline Sans Mono',monospace;font-size:11px;
-    letter-spacing:.24em;text-transform:uppercase;color:var(--gold);
-    margin-bottom:18px;
-  }
-  .authorcard .row{display:flex;justify-content:space-between;gap:14px;
-    padding:10px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:16px}
-  .authorcard .row:last-child{border:0}
-  .authorcard .row span:first-child{color:#bdb3a4;font-family:'Spline Sans Mono',monospace;font-size:13px}
-  .authorcard .fill{color:var(--gold);font-style:italic}
-
-  footer.site{
-    text-align:center;padding:30px 0 60px;border-top:3px double var(--ink);
-    font-family:'Spline Sans Mono',monospace;font-size:12px;
-    letter-spacing:.08em;color:var(--muted);
-  }
-  footer.site a{color:var(--accent);text-decoration:none;font-weight:500}
-
-  @media(max-width:560px){
-    body{font-size:18px}
-    article p:first-of-type::first-letter{font-size:58px}
-    .authorcard .row{flex-direction:column;gap:2px}
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Lingbis - Homepage</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+    
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo">BizTech<span class="gradient-text">Insight</span></div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#articles">Artikel</a></li>
+                <li><a href="#assessment">Tentang</a></li>
+                <li><a href="https://www.amikom.ac.id" target="_blank" class="amikom-link">Kampus Amikom</a></li>
+                <li><button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button></li>
+            </ul>
+        </div>
+    </nav>
 
-<header class="masthead">
-  <div class="wrap">
-    <div class="kicker">Edukasi · Bisnis · Teknologi</div>
-    <h1>Bisnis&nbsp;Digital&nbsp;<em>101</em></h1>
-    <p class="tagline">Peluang, strategi, dan kiat praktis berbisnis di era digital — untuk UMKM &amp; wirausaha pemula.</p>
-    <div class="meta-bar">
-      <span>Penulis: <b>[ Nama Anda ]</b></span>
-      <span>NIM: <b>[ NIM Anda ]</b></span>
-      <span>Universitas Amikom Yogyakarta</span>
-    </div>
-  </div>
-</header>
+    <header class="hero">
+        <!-- Floating shapes for modern aesthetic -->
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        
+        <div class="container hero-content reveal">
+            <div class="hero-text">
+                <div class="badge">🚀 Masa Depan Bisnis</div>
+                <h1>Membangun Bisnis di Era <span class="gradient-text type-text"></span></h1>
+                <p>Jelajahi wawasan terbaru mengenai tren teknologi, lingkungan bisnis, dan strategi inovasi untuk masa depan.</p>
+                <div class="hero-buttons">
+                    <a href="#assessment" class="btn btn-primary btn-glow">Lihat Penilaian</a>
+                    <a href="#articles" class="btn btn-secondary">Baca Artikel <i class="fas fa-arrow-down"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/images/hero.png" alt="Business Growth">
+            </div>
+        </div>
+    </header>
 
-<nav class="toc">
-  <div class="wrap">
-    <a href="#art1">01 · Apa Itu Bisnis Digital</a>
-    <a href="#art2">02 · 5 Peluang dari Rumah</a>
-    <a href="#art3">03 · AI untuk Bisnis Kecil</a>
-  </div>
-</nav>
+    <section id="assessment" class="assessment-section">
+        <div class="container reveal">
+            <div class="assessment-card glass-panel">
+                <div class="card-header">
+                    <h2><i class="fas fa-id-card-clip gradient-text"></i> Kriteria Penilaian Ujian</h2>
+                    <p>Homepage interaktif ini diajukan untuk memenuhi tugas akhir Lingkungan Bisnis.</p>
+                </div>
+                <div class="card-grid">
+                    <div class="info-item hover-scale">
+                        <div class="icon"><i class="fas fa-user-astronaut"></i></div>
+                        <div class="details">
+                            <span class="label">Nama Mahasiswa</span>
+                            <span class="value" id="studentName">[Nama Anda]</span>
+                        </div>
+                    </div>
+                    <div class="info-item hover-scale">
+                        <div class="icon"><i class="fas fa-fingerprint"></i></div>
+                        <div class="details">
+                            <span class="label">Nomor Mahasiswa (NIM)</span>
+                            <span class="value" id="studentId">[Nomor Mahasiswa]</span>
+                        </div>
+                    </div>
+                    <div class="info-item hover-scale">
+                        <div class="icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="details">
+                            <span class="label">Pendapatan</span>
+                            <span class="value success-text">Rp 15.000.000 / Bulan</span>
+                        </div>
+                    </div>
+                    <div class="info-item hover-scale">
+                        <div class="icon"><i class="fas fa-globe"></i></div>
+                        <div class="details">
+                            <span class="label">Alamat Blog / Channel Youtube</span>
+                            <span class="value"><a href="https://www.youtube.com/@ChannelAnda" target="_blank" class="hover-underline">youtube.com/@ChannelAnda</a></span>
+                        </div>
+                    </div>
+                    <div class="info-item hover-scale">
+                        <div class="icon"><i class="fas fa-users-viewfinder"></i></div>
+                        <div class="details">
+                            <span class="label">Visitors / Subscribers</span>
+                            <span class="value counter gradient-text" data-target="85400">0</span>
+                        </div>
+                    </div>
+                    <div class="info-item hover-scale">
+                        <div class="icon"><i class="fas fa-building-columns"></i></div>
+                        <div class="details">
+                            <span class="label">Institusi</span>
+                            <span class="value"><a href="https://www.amikom.ac.id" target="_blank" class="hover-underline">Universitas Amikom Yogyakarta</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<main class="wrap">
+    <section id="articles" class="articles-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Artikel <span class="gradient-text">Terbaru</span></h2>
+                <p>Wawasan yang akan mengubah cara Anda berbisnis.</p>
+            </div>
+            
+            <div class="articles-grid">
+                <!-- Article 1 -->
+                <article class="article-card glass-panel reveal reveal-delay-1">
+                    <div class="card-img-wrapper">
+                        <img src="assets/images/article_1.png" alt="Strategi Digital">
+                        <div class="category-badge">Blog</div>
+                    </div>
+                    <div class="article-content">
+                        <h3>Optimalisasi Pertumbuhan Bisnis Lewat Data Analytics</h3>
+                        <p>Bagaimana perusahaan modern menggunakan big data untuk memprediksi tren pasar dan mengambil keputusan strategis yang tepat.</p>
+                        <a href="artikel-1.html" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <!-- Article 2 -->
+                <article class="article-card glass-panel reveal reveal-delay-2">
+                    <div class="card-img-wrapper">
+                        <img src="assets/images/article_2.png" alt="Remote Work">
+                        <div class="category-badge">Blog</div>
+                    </div>
+                    <div class="article-content">
+                        <h3>Membangun Budaya Kerja Modern yang Efektif</h3>
+                        <p>Tantangan dan peluang dalam mengelola tim dinamis tanpa mengorbankan produktivitas dan kualitas kerja karyawan.</p>
+                        <a href="artikel-2.html" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <!-- Article 3 -->
+                <article class="article-card glass-panel reveal reveal-delay-3">
+                    <div class="video-thumbnail">
+                        <img src="assets/images/hero.png" alt="Video Podcast">
+                        <div class="play-button ripple"><i class="fas fa-play"></i></div>
+                        <div class="category-badge video-badge"><i class="fab fa-youtube"></i> Video</div>
+                    </div>
+                    <div class="article-content">
+                        <h3>[VIDEO] Diskusi: Lingkungan Bisnis Pasca Pandemi</h3>
+                        <p>Sesi diskusi eksklusif membahas bagaimana lanskap bisnis telah berubah secara permanen dan cara beradaptasi.</p>
+                        <a href="video-1.html" class="read-more">Tonton Sekarang <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
 
-  <!-- ARTIKEL 1 -->
-  <article id="art1">
-    <div class="art-num">ARTIKEL 01</div>
-    <h2>Apa Itu Bisnis Digital dan Mengapa Penting bagi UMKM?</h2>
-    <div class="byline">Oleh [ Nama Anda ] · Kategori: Edukasi Bisnis</div>
+    <footer>
+        <div class="container reveal">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>BizTech<span class="gradient-text">Insight</span></h3>
+                    <p>Memberikan wawasan mendalam tentang dunia bisnis, teknologi, dan strategi manajemen modern.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Tautan Penting</h4>
+                    <ul>
+                        <li><a href="https://www.amikom.ac.id" target="_blank">Universitas Amikom</a></li>
+                        <li><a href="#assessment">Tentang Penulis</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BizTech Insight. Dibuat dengan <i class="fas fa-heart" style="color: #ef4444;"></i> untuk pemenuhan tugas perkuliahan Lingkungan Bisnis.</p>
+            </div>
+        </div>
+    </footer>
 
-    <p>Membuka toko di internet kini bisa lebih murah daripada menyewa kios di pinggir jalan. Pernyataan sederhana itu menggambarkan pergeseran besar yang sedang terjadi: bisnis tidak lagi terikat pada lokasi fisik. Bagi pelaku Usaha Mikro, Kecil, dan Menengah (UMKM), pergeseran ini membuka pintu peluang yang dahulu hanya dimiliki perusahaan besar.</p>
-
-    <p>Secara sederhana, <b>bisnis digital</b> adalah kegiatan usaha yang memanfaatkan teknologi internet untuk memasarkan, menjual, atau mengelola produk dan jasa. Bentuknya beragam: toko online di lokapasar, jasa berbasis aplikasi, hingga penjualan konten digital seperti kursus daring.</p>
-
-    <blockquote>Bisnis digital bukan menggantikan usaha konvensional, melainkan memperluas jangkauannya tanpa batas geografis.</blockquote>
-
-    <h3>Mengapa UMKM Perlu Melirik?</h3>
-    <p>Setidaknya ada tiga alasan mendasar mengapa transformasi digital penting bagi UMKM:</p>
-    <ul class="clean">
-      <li><b>Jangkauan pasar yang luas.</b> Produk dapat ditemukan oleh konsumen lintas kota bahkan lintas pulau, tanpa perlu membuka cabang.</li>
-      <li><b>Biaya operasional rendah.</b> Membuka toko digital jauh lebih hemat dibanding menyewa tempat dan mempekerjakan banyak staf.</li>
-      <li><b>Fleksibilitas operasi.</b> Usaha dapat berjalan 24 jam dan dikelola dari mana saja, bahkan dari rumah.</li>
-    </ul>
-
-    <p>Tentu ada tantangan: persaingan menjadi lebih ketat dan pelaku usaha dituntut melek teknologi. Namun dengan langkah bertahap dan konsisten, hambatan ini dapat diatasi. Kunci utamanya adalah kemauan untuk mulai, sekecil apa pun langkahnya.</p>
-
-    <div class="pull">
-      <span class="lbl">Inti Bahasan</span>
-      Bisnis digital memberi UMKM akses ke pasar yang lebih luas dengan biaya rendah. Yang dibutuhkan bukan modal besar, melainkan keberanian memulai dan kemauan belajar.
-    </div>
-
-    <p>Ingin mendalami dunia bisnis dan teknologi lebih jauh? Kunjungi <a class="inline" href="https://www.amikom.ac.id" target="_blank" rel="noopener">www.amikom.ac.id</a> untuk mengenal program studi yang relevan.</p>
-  </article>
-
-  <div class="divider">✦ ✦ ✦</div>
-
-  <!-- ARTIKEL 2 -->
-  <article id="art2">
-    <div class="art-num">ARTIKEL 02</div>
-    <h2>5 Peluang Bisnis Digital yang Bisa Dimulai dari Rumah</h2>
-    <div class="byline">Oleh [ Nama Anda ] · Kategori: Peluang Usaha</div>
-
-    <p>Modal kecil, dimulai dari rumah, namun tetap berpotensi menghasilkan. Inilah daya tarik bisnis digital bagi pemula. Anda tidak perlu menunggu modal besar untuk memulai — yang penting adalah memilih peluang yang sesuai dengan keahlian dan minat. Berikut lima peluang yang realistis untuk dijalankan.</p>
-
-    <h3>1. Berjualan di Lokapasar</h3>
-    <p>Menjual produk melalui marketplace adalah titik awal paling mudah. Anda cukup mengunggah foto produk, menulis deskripsi, dan menentukan harga. Cocok untuk produk fisik seperti makanan ringan, fesyen, atau kerajinan tangan.</p>
-
-    <h3>2. Jasa Pembuatan Konten</h3>
-    <p>Jika Anda gemar menulis, mendesain, atau membuat video, jasa pembuatan konten sangat dibutuhkan oleh banyak usaha. Modal utamanya adalah keterampilan, bukan uang.</p>
-
-    <h3>3. Pemasaran Afiliasi</h3>
-    <p>Anda mempromosikan produk pihak lain dan memperoleh komisi dari setiap penjualan. Tidak perlu menyimpan stok barang, cukup membangun audiens dan kepercayaan.</p>
-
-    <h3>4. Kelas atau Kursus Daring</h3>
-    <p>Punya keahlian khusus? Kemas menjadi materi pembelajaran dan jual sebagai kelas daring. Sekali dibuat, materi dapat dijual berulang kali.</p>
-
-    <h3>5. Jasa Berbasis Keahlian</h3>
-    <p>Desain grafis, penulisan, penerjemahan, atau konsultasi kecil-kecilan dapat ditawarkan secara daring melalui platform freelance maupun media sosial.</p>
-
-    <div class="pull">
-      <span class="lbl">Tips Memilih</span>
-      Jangan mencoba semuanya sekaligus. Pilih satu peluang yang paling sesuai dengan keahlian Anda, tekuni hingga stabil, baru kembangkan ke peluang berikutnya.
-    </div>
-
-    <p>Pelajari lebih banyak strategi bisnis digital melalui sumber pendidikan di <a class="inline" href="https://www.amikom.ac.id" target="_blank" rel="noopener">www.amikom.ac.id</a>.</p>
-  </article>
-
-  <div class="divider">✦ ✦ ✦</div>
-
-  <!-- ARTIKEL 3 -->
-  <article id="art3">
-    <div class="art-num">ARTIKEL 03</div>
-    <h2>Memanfaatkan AI Sederhana untuk Bisnis Kecil</h2>
-    <div class="byline">Oleh [ Nama Anda ] · Kategori: Teknologi</div>
-
-    <p>Kecerdasan buatan sering terdengar rumit dan mahal — seolah hanya untuk perusahaan teknologi raksasa. Padahal, kenyataannya tidak demikian. Saat ini, pelaku usaha kecil pun dapat memanfaatkan kecerdasan buatan (Artificial Intelligence/AI) untuk bekerja lebih cepat dan efisien, bahkan dengan alat-alat yang gratis.</p>
-
-    <h3>Apa Saja yang Bisa Dilakukan AI untuk Usaha Kecil?</h3>
-    <ul class="clean">
-      <li><b>Membuat deskripsi produk.</b> Alat AI dapat membantu menyusun teks promosi yang menarik dalam hitungan detik.</li>
-      <li><b>Menjadwalkan unggahan media sosial.</b> Konsistensi promosi terjaga tanpa harus online setiap saat.</li>
-      <li><b>Menjawab pertanyaan pelanggan otomatis.</b> Chatbot sederhana dapat melayani pertanyaan umum kapan saja.</li>
-      <li><b>Menganalisis tren penjualan.</b> Data dapat diolah untuk membantu menentukan produk mana yang perlu diperbanyak.</li>
-    </ul>
-
-    <blockquote>Prinsipnya bukan memakai teknologi tercanggih, melainkan teknologi yang tepat guna — yang benar-benar menjawab kebutuhan usaha Anda.</blockquote>
-
-    <h3>Jangan Lupakan Etika Data</h3>
-    <p>Saat menggunakan AI yang mengolah data pelanggan, penting untuk menjaga keamanan dan transparansi. Sampaikan kepada pelanggan data apa yang dikumpulkan dan untuk apa digunakan. Kepercayaan adalah aset bisnis yang paling berharga, dan menjaganya adalah bagian dari profesionalisme.</p>
-
-    <div class="pull">
-      <span class="lbl">Langkah Awal</span>
-      Coba satu alat AI gratis minggu ini untuk satu tugas kecil — misalnya menulis caption. Rasakan manfaatnya sebelum memperluas penggunaannya.
-    </div>
-
-    <p>Tertarik mendalami teknologi dan penerapannya dalam bisnis? Informasi selengkapnya tersedia di <a class="inline" href="https://www.amikom.ac.id" target="_blank" rel="noopener">www.amikom.ac.id</a>.</p>
-  </article>
-
-  <!-- AUTHOR CARD -->
-  <div class="authorcard">
-    <div class="lbl">Tentang Penulis &amp; Identitas Tugas</div>
-    <div class="row"><span>Nama</span><span class="fill">[ Isi nama Anda ]</span></div>
-    <div class="row"><span>NIM</span><span class="fill">[ Isi NIM Anda ]</span></div>
-    <div class="row"><span>Mata Kuliah</span><span>Lingkungan Bisnis (SI012)</span></div>
-    <div class="row"><span>Institusi</span><span>Universitas Amikom Yogyakarta</span></div>
-    <div class="row"><span>Alamat Blog</span><span class="fill">[ Isi URL blog setelah dipublikasikan ]</span></div>
-  </div>
-
-</main>
-
-<footer class="site">
-  <div class="wrap">
-    © <span id="yr"></span> Bisnis Digital 101 · Blog Tugas UTS Lingkungan Bisnis<br>
-    Universitas Amikom Yogyakarta · <a href="https://www.amikom.ac.id" target="_blank" rel="noopener">www.amikom.ac.id</a>
-  </div>
-</footer>
-
-<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+    <!-- Scripts for Interactivity -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
